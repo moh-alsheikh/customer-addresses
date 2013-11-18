@@ -12,6 +12,48 @@
   <dd><%= @customer.date_became_customer %></dd>
 </dl>
 
+
+
+<dl class="dl-horizontal">
+   <legend>Addresses</legend>
+   
+   
+   
+   <table id="addresses-table" class="table table-hover table-striped">
+
+     <thead>
+    
+       <th>#</th>
+       <th>Address Line 1</th>
+       <th>Address Line 2</th>
+       <th>City</th>
+       <th>Country</th>
+    
+     </thead>
+  
+     <tbody>
+    
+       <%@customer.addresses.each do |addresse| %>
+    
+       <tr class="fields">
+    
+         <td><%= addresse.id  %></td>
+         <td><%= addresse.line_1%></td>
+          <td><%= addresse.line_2%></td>
+          <td><%= addresse.city%></td>
+          <td><%= addresse.country%></td>
+          
+       </tr>
+    
+       <% end %>
+    
+     </tbody>
+   </table>
+   
+     
+</dl>
+ 
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               customers_path, :class => 'btn' %>

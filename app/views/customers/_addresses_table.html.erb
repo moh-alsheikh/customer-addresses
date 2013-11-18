@@ -1,0 +1,36 @@
+<table id="addresses-table" class="table table-hover table-striped">
+
+  <thead>
+    
+    <th>#</th>
+    <th>Address Line 1</th>
+    <th>Address Line 2</th>
+    <th>City</th>
+    <th>Country</th>
+    <th></th>
+    
+  </thead>
+  
+  <tbody>
+    
+    <%= f.fields_for(:addresses) do |addresses_form| %>
+    
+    <tr class="fields">
+    
+      <td><%= addresses_form.text_field(:id, :class=>"span1 text-center", :disabled=> true)  %></td>
+      <td><%= addresses_form.text_field(:line_1,:class=>"span3") %></td>
+      <td><%= addresses_form.text_field(:line_2,:class=>"span3") %></td>
+      <td><%= addresses_form.text_field(:city,:class=>"span2") %></td>
+      <td><%= addresses_form.text_field(:country,:class=>"span2") %></td>
+      
+      <td>
+        <%= link_to_remove_fields('<strong>X</strong>'.html_safe , addresses_form , :title => "Delete this address.") %>
+      </td>
+    
+    </tr>
+    
+    <% end %>
+    
+  </tbody>
+</table>
+

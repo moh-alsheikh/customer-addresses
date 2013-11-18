@@ -1,0 +1,59 @@
+<div id="new-address-fields" class="modal fade" data-backdrop="static">
+  
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>New Address</h3>
+  </div>
+  
+  <div class="modal-body">
+    
+    <fieldset>
+      
+      <div class="control-group">
+        <%= f.label("Line1:", :class => "control-label") %>
+        <div class="controls">
+          <%= f.text_field(:line_1, :class => "input-xlarge field", :data => { :validation => "required validate_max_length length150", "validation-error-msg" =>"Address Line 1 is required and cannot be longer than 150 characters."}) %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label("Line2:", :class => "control-label") %>
+        <div class="controls">
+          <%= f.text_field(:line_2, :class => "input-xlarge field", :data => { :validation => "required validate_max_length length150", "validation-error-msg" =>"Address Line 2 is required and cannot be longer than 150 characters."}) %>
+        </div>
+      </div>
+      
+      
+      <div class="control-group">
+        <%= f.label("City:", :class => "control-label") %>
+        <div class="controls">
+          <%= f.text_field(:city, :class => "input-xlarge field text-center", :data => { :validation => "required validate_max_length length50", "validation-error-msg" =>"City is required and cannot be longer than 50 characters."}) %>
+        </div>
+      </div>
+      
+      
+      <div class="control-group">
+        <%= f.label("Country:", :class => "control-label") %>
+        <div class="controls">
+          <%= f.text_field(:country, :class => "input-xlarge field text-center", :data => { :validation => "required validate_max_length length50", "validation-error-msg" =>"Country is required and cannot be longer than 50 characters."}) %>
+        </div>
+      </div>
+      
+      <%= f.hidden_field(:_destroy, :class => "field") %>
+      
+    </fieldset>
+    
+  </div>
+  
+  <div class="modal-footer">
+    <button id="addButton" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" title="Add this address to the list of addresss that are assigned to this Ship.">Save</button>
+    <button id="cancelButton" type="button" class="btn btn-inverse" data-dismiss="modal" aria-hidden="true" title="Close this screen without adding the address to the list.">Close</button>
+  </div>
+  
+</div>
+
+<script type="text/javascript">
+  addressFieldsUI.init();
+</script>
+
+
