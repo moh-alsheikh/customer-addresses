@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  line_1: MyString
+  line_2: MyString
+  country: MyString
+  city: MyString
+
+two:
+  customer_id: 1
+  line_1: MyString
+  line_2: MyString
+  country: MyString
+  city: MyString

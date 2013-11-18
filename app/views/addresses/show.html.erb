@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @address.customer_id %>
+</p>
+
+<p>
+  <b>Line 1:</b>
+  <%= @address.line_1 %>
+</p>
+
+<p>
+  <b>Line 2:</b>
+  <%= @address.line_2 %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @address.country %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @address.city %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

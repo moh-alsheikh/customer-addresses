@@ -1,0 +1,37 @@
+
+<%- model_class = Customer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
+
+<table class="table table-striped">
+  <thead>  
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Started date</th>
+    <th>Actions</th>
+  </tr>
+</thead>  
+ <tbody>  
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= mail_to customer.email , customer.email%></td>
+    <td><%= customer.date_became_customer %></td>
+    
+    <td>
+        <%= link_to 'Show', customer , :class => 'btn btn-mini btn-primary'%>
+        <%= link_to 'Edit', edit_customer_path(customer) , :class => 'btn btn-mini'%>
+        <%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn btn-mini btn-danger'%>
+    </td>
+    
+  </tr>
+<% end %>
+ </tbody>  
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path , :class=> "btn btn-large" %>

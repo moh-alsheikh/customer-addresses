@@ -1,0 +1,2 @@
+== Customer and addresses
+Just another way to implement nested form in rails .
